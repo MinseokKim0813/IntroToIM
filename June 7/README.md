@@ -1,3 +1,3 @@
-![](https://github.com/MinseokKim0813/IntroToIM/blob/main/June%207/skull.jpg?raw=true)
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/June%207/screenshot.jpg?raw=true)
 
-For this assignment, I practiced modifying the pixels of an image on Processing. Based on the image of a human skull, I drew many random horizontal and vertical colored lines 
+For this assignment, I practiced modifying the pixels of an image on Processing. Based on the image of a human skull, I drew many random horizontal and vertical colored lines. The opacity of the color keeps going up until it becomes white and then starts going down until it becomes black, and it keeps going on. Before programming, I imagined the outcome to be an image of a human skull that is vaguely visible due to the lines, and I am happy that the outcome has been successful and came out to be just what I expected. Although looping for drawing the lines was hard, I could finally figure out after many trial and errors. 
