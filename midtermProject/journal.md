@@ -9,4 +9,4 @@ The pattern would be randomly generated, and each instrument would be assigned t
 
 I have created the basic 4 shapes that would each play different sound. I would have to adjust their positions and sizes later on as I add more features to the game. I added a constant variable of the number of instruments; I also added a void drawDrum() which draws the shapes that represent the instrument buttons.
 
-![](
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/screenshot.PNG?raw=true)
