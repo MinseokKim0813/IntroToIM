@@ -28,3 +28,18 @@ In the main page, I have made the gradation function to make the background colo
 
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/gradation.PNG?raw=true)
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/gradation2.PNG?raw=true)
+
+2021/06/12
+
+Today, I have made a significant progress in the code of the program. In the main page, I created several functions that does the job to make the rhythm game. Aside from designing the main page that took quite a long time, the hardest task I faced was to create a function that automatically and randomly generates the sound pattern that the user has to imitate exactly. I faced a lot of problem while creating that code block. At first, I though of using an arraylist that consists of strings "UP","DOWN","LEFT","RIGHT". However, after many errors, I realized that the keycode input from the user, which the program needs to compare with the randomly generated pattern, was indeed integer ASCII value and not the string. Therefore, I used an integer array to store the 4 different integer value of the arrow keys, and made the program to randomly assign them in another array.
+
+Then, I built a function to compare the given input array to the previously generated array - the answer. I then made another function that updates the function that randomly generates the pattern. I made it little more complicated by making it generate the pattern with random different number of sounds in the pattern. For example, once the current pattern is generated and then the user correctly inputs the same pattern, the program will then generate a sound pattern that has different number of sounds in it. In the process, I encountered a lot of errors mainly becuase I could not figure out an easy way to change the number of elements in an array in Java; but I eventually figured out that I can leave the unused elements as 0 and only iterate through the assigned elements in the array. 
+
+Another problem I faced was while I was figuring out how to make the program know which index in the array in the pattern the user is inputting. Since the draw function is called every frame, I needed a way to keep a record of how many sounds in the pattern has already been input previously by the user in the current pattern. I thought of stack data type as a solution, so to make the current array that stores the sound pattern into a stack-like data type, I decided to simply push each element in the array to the next index whenever the user inputs a sound. This has solved the prolem perfectly.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/pushing.PNG?raw=true)
+
+I also designed the main page better, with a box in the middle to indicate whether the answer input is correct or not. The face smiles in the middle, but when the game is over, it would stop smiling. 
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/mainpage1.PNG?raw=true)
+
