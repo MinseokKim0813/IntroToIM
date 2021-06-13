@@ -43,3 +43,22 @@ I also designed the main page better, with a box in the middle to indicate wheth
 
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/mainpage1.PNG?raw=true)
 
+2021/06/13
+
+Today, I finally completed the program. I added the sound feature in the program, which was the most important feature for a rhythm game.
+
+Firstly, I made the buttons turn white when pressed. I did not encounter any error in the process.
+
+However, a harder problem was in the process of making the buttons get detected only once when they were pressed. Since the more than one frame passed during the time the arrow keys were pressed, no matter how shortly I pressed them, the program kept detecting the same arrow key more than once and gave the feedback that the answer was wrong. To solve this problem, I researched and found out that I could use the builtin function keyReleased() to check if the user has released the key or now. Using this function, I made a boolean variable to make the program only detect once when a key is pressed, until the key is released. 
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/keyreleased.PNG?raw=true)
+
+Then, I made the program to play the sound of the buttons each time they were pressed. Making the program play the sound whenever a new sound pattern is generated was harder, because the program kept playing only the first sound in the pattern as it could not check if all the sounds were done playing. To solve this problem, I used .isPlaying() to check if all the sounds in the pattern were played.
+
+Another problem I faced was while I was working on the algorithm to proceed to the next pattern when the current pattern was correctly input. When the user correctly inputs the pattern, the program generates the next pattern and play the sound. However, because there was no delay from the moment the user inputs the pattern to the moment when the new pattern sounds are played, the sounds that the user input and the sounds that the program played in the new pattern were not distinguishable. Therefore, I decided to delay for 2 seconds after the user completes the current pattern before proceeding to playing the sounds of the newly generated sound pattern. I used the millis() function again to time the delay, and during the delay, I made the program display "NICE!" to indicate that the new pattern would play soon. However, I realized that "NICE!" also appears immediately after the game starts, because then the new pattern is about to be played as well. I fixed this problem by checking whether the sound pattern had been generated after the game started or before the game started. If it was generated before, it meant that the user just started playing the game, so the text would not appear.
+
+In game over page, I made the smiley face in the middle into a sad face and displayed the score. When the user presses "r" key, then the program goes back to the starting page again and can play the game again from there.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/gameover.PNG?raw=true)
+
+Overall, since I successfully built a rhythm game that works exactly as I wanted it to, so I evaluate my midterm project to be a success. Plus, after encountering numerous errors that I had never seen before and by going through the struggles to solve them all, I grew as a designer and a programmer. As I am interested in music, I would actually use this program to automatically generate musical patterns that I would not have though of myself. In the future, when I attend the machine learning and AI classes in the computer science courses, I would modify this program and make it to think of more creative and better musical combination that humans would not have thought of. 
