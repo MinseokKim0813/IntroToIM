@@ -18,5 +18,13 @@ I created the starting page of the game today. I took an image from a website in
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/startPage.PNG?raw=true)
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/startPageCode.PNG?raw=true)
 
+2021/06/11
 
-In the instruction page, I explained how to play the game, and made it to detect the enter or return key to start the game.
+Today, I completed the instruction page and worked on the background design of the main page. When the user clicks anywhere on the starting page, the program moves to the instruction page where I explained how to play the game. As the on-screen text indicates, when the user presses return or enter key, the program moves to the main page. 
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/instruction.PNG?raw=true)
+
+In the main page, I have made the gradation function to make the background color keep changing between two specific colors. I did not have any big problen in creating the code for the gradation function or the instruction function today.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/gradation.PNG?raw=true)
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/midtermProject/Screenshots/gradation2.PNG?raw=true)
