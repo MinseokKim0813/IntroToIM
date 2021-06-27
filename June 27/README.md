@@ -1,1 +1,5 @@
+Today's assignment was to create a simple game using any communication between Arduino and Processing. I decided to build a game where the user needs to keep the ball within the screen, preventing it from touching the bottom. The user can control the x coordinate of the bouncing platform at the bottom of the screen by using the potentiometer. I took input from the potentiometer and output it as the x coordinate of the platform in Processing. It was very hard in the beginning. This task, and this topic of the course has been the toughest to understand so far among all the topics we have covered. It took a bit of research and effort to look into the code in both Processing and Arduino in the examples from the Professor to grasp some understanding of the logic in the code. However, in the end, I was able to understand some of it, and was able to create the game I wanted. 
 
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/June%2027/circuit.jpg?raw=true)
+
+Here is the in-game video of the program. Anybody logged in with NYU account can view the video: https://drive.google.com/file/d/1L1wCVcDMVr9OspSj6YKYTQQ0tkiw-Dbq/view?usp=sharing
