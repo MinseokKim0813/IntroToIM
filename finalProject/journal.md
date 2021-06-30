@@ -11,4 +11,6 @@ In the game that I came up with, the main character needs to go through the wall
 
 2021/06/30
 
-Today, I have added the specific details about the final project. On the breadboard, there would be 3 buttons; unlike the initial thought, the speed of the walls would not increase as the difficulty of the game is already quite high as the player needs to control 2 different kinds of inputs on the breadboard. Since there are multiple input devices for the player, the buttons and the potentiometer would have to be easy to control - for example, they would need to have enough distance from the wires. 
+Today, I have added the specific details about the final project. On the breadboard, there would be 3 buttons; unlike the initial thought, the speed of the walls would not increase as the difficulty of the game is already quite high as the player needs to control 2 different kinds of inputs on the breadboard. Since there are multiple input devices for the player, the buttons and the potentiometer would have to be easy to control - for example, they would need to have enough distance from the wires.
+
+In Processing, I have created the start page where the title and my name displays. Since the game is about going through as many walls as possible and getting higher score, I have put an image of a wall and decided the name of the game as "Through the Walls". 
