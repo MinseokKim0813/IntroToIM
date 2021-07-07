@@ -26,10 +26,10 @@ NOTICE:
 APPENDICES:
 
 Below is the schematics for the circuit on the breadboard connected to Arduino:
-//////////////////////////////////////////
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/schematics.png?raw=true)
 
 Below is the picture of the circuit:
-////////////////////////////////////////////
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/circuitPicture.jpg?raw=true)
 
 Here is the link to a short video of the gameplay: ///////////////////////////////////////////
 
