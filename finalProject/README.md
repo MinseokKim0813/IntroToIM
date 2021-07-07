@@ -31,7 +31,7 @@ Below is the schematics for the circuit on the breadboard connected to Arduino:
 Below is the picture of the circuit:
 ![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/circuitPicture.jpg?raw=true)
 
-Here is the link to a short video of the gameplay: ///////////////////////////////////////////
+Here is the link to a short video of the gameplay: https://drive.google.com/file/d/1lONowkkBon_WBdnM309tvjP4HeEj8QFR/view?usp=sharing
 
 
 
