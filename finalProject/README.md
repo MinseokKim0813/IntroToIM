@@ -35,4 +35,4 @@ Here is the link to a short video of the gameplay: /////////////////////////////
 
 
 
-* All the reflections, progress, code snippets, challenges faced have been written in 'journal.md' in the same directory; citation has been uploaded in 'citation.docx' in the same directory.
+* All the reflections, progress, code snippets, challenges faced have been written in 'journal.md' in the same directory; citation has been uploaded in 'citation.docx' in the 'reference' directory.
