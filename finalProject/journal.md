@@ -199,6 +199,10 @@ void manageWalls()
 }
 ```
 
+And below is the screenshot of the Processing program with walls.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/walls.PNG?raw=true)
+
 I created the coin as a property of a wall, since every wall has a coin inside itself. Whenever a coin is collected, the speaker needed to play a tone. Since I already figured out how to send the data from Processing to Arduino, I only needed to receive the sent data in Arduino program. As the professor suggested, I used 'Serial.parseInt()' to receive the integer data from Processing program. I sent 1 whenever a coin is collected. Below is the Arduino code block for receiving the data.
 
 ```java
@@ -206,7 +210,7 @@ I created the coin as a property of a wall, since every wall has a coin inside i
 coinEaten = Serial.parseInt();
 ```
 
-Lastly, the game over function was much easier to implement commpared to other functions. I created a boolean variable 'gameOver' and checked if it is true. whenever the square hits the wall with different color, the variable becomes true. Then, all I needed to do was just display the texts and score and let the player choose to play again. Below is the code block for game over page.
+Lastly, the game over function was much easier to implement commpared to other functions. I created a boolean variable 'gameOver' and checked if it is true. whenever the square hits the wall with different color, the variable becomes true. Then, all I needed to do was just display the texts and score and let the player choose to play again. Below is the code block for game over page. In the end, I also wrote the instruction that I left blank earlier on Word document and took a screenshot, then I put it in the instruction page in Processing program as an image.
 
 ```java
 // Game over
@@ -251,5 +255,13 @@ Lastly, the game over function was much easier to implement commpared to other f
     }
   }
 ```
+
+And below is the screenshot of the game over page.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/gameOver.PNG?raw=true)
+
+And below is the screenshot of the instruction page.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/instruction.PNG?raw=true)
 
 I have written 'README.md' and finally finished everything. To reflect, I evaluate my project as a success. 
