@@ -63,6 +63,5 @@ However, I have not figured out a way to send the data for the pressed buttons f
 2021/07/06
 
 I have figured out a way to solve the problem I faced yesterday: how to send two different data from Arduino to Processing. It was much simpler than I thought. I created a boolean flag for the red and blue buttons each, and sent the value together with the data from the reading of the potentiometer. I have 
-'<addr>' ddd
-  dd
-  
+`// Sending the data for potentiometer input and colored button input to Processing
+Serial.println(String(analogRead(potentiometer)) + "," + color);`
