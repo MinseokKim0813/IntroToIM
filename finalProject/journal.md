@@ -46,4 +46,18 @@ I have revised the lectures from the class for seiral communication between Ardu
 
 2021/07/05
 
-Today, I have made a big progress on my program. 
+Today, I have made a big progress on my program. I realized that I am a little behind the schedule for the deadline, so I decided to spend more time on this project. Thus, from today, I am putting the other final project aside and keeping this project as the priority. 
+
+In the Processing program, I realized that I would not need a gradation function. Since my game involves using colors, I noticed that the gradation in the background would disturb the focus of the player or visually confusing to the players. After deleting the gradation function, I worked on Arduino program and breadboard. I have completed the circuit for a RGB light, a speaker, 1 red and 1 blue buttons, and a potentiometer. Although I had forgotten how to build the circuit for most of the components, after revising the lectures, it was not at all challenging to build the circuit on the breadboard.
+
+Below is the picture of the circuit.
+
+![](https://github.com/MinseokKim0813/IntroToIM/blob/main/finalProject/reference/circuitPicture.jpg?raw=true)
+
+In Arduino program, I have so far completed coding for the 2 buttons and potentiometer. I have not bumped into any error or difficulty while working on them yet. In Processign program, I have made functions for drawing and moving the y coordinate of the square (main character). As I have learned in the class, I have mapped the reading of the potentiometer to the height of the screen in the Processing code so the reading of the potentiometer is capped at the bottom and top of the screen in the Processing program. Arduino sends the reading for the potentiometer when it receives data on the serial from Processing, and Processing also sends the data after reflecting the data received from Arduino, every time it receives a data from Arduino. However, I have not coded for the communication between the buttons and Processing yet.
+
+I have not figured out a way to send the data for the pressed buttons from Arduino to Processing yet. I have only worked with sending only one type of data from Arduino to Processing before, so I am currently working to figure out how to send two different data separately. Although I am stuck on this task for now, I feel that it won't be for long, and since the progress stays on trach for the due date, I am going fine for the overall progress of the project. I will try to figure this task by tomorrow.
+
+2021/07/06
+
+I have figured out a way to solve the problem I faced yesterday: how to send two different data from Arduino to Processing. It was much simpler than I thought. I created a boolean flag for the red and blue buttons each, and sent the value together with the 
