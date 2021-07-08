@@ -36,3 +36,7 @@ Here is the link to a short video of the gameplay: https://drive.google.com/file
 
 
 **All the reflections, progress, code snippets, challenges faced have been written in 'journal.md' in the same directory; citation has been uploaded in 'citation.docx' in the 'reference' directory.**
+
+But here is the gist of the reflection and evaluation on the project:
+
+*To reflect, I evaluate my project as a success. Most importantly, I have learned a lot while working on the project, such as the properties of String variables in Java, two-way communication between Arduino and Processing, and how to reuse an object and avoid making them infinite times. I have faced several challenges, but I was able to soon figure out a way out, and the lecture notes and directly asking the professor helped me the most. It was also fun to work on such a big, a week-long-project; I feel that I have grown a little as a programmer and an academic. In the future and in the next such project, I would try to assign each day with tasks to be completed, and plan the schedule much ahead of the deadline, so that even if I run into a problem, I would have enough time to solve it.*
