@@ -111,3 +111,145 @@ As I have made a lot of progress today, I am on track. The remaining tasks are i
 
 2021/07/07
 
+My program has been finally completed. I have asked the professor about the communication in both ways between Arduino and Processing. He provided me a clear answer for it with details, so I was able to understand the concept completely. Before asking him, I tried directly sending the data from Processing to Arduino, like I did before to send an arbitrary data to Arduino to keep the communication going. Below is the code block I used in Processing program for checking if the square collected a coin.
+
+```java
+    // If hitting the coin, increase score
+    if (! gameOver)
+    {
+      if ((characterX + characterW/2 >= x-coin_w/2)&&(characterX-characterW/2 <= x+coin_w/2)
+        &&(characterY+characterW/2 >= coin_y-coin_w/2)&&(characterY-characterW/2 <= coin_y+coin_w/2)
+        && (coinEaten==false))
+      {
+        score += 1;
+        coinEaten = true;
+        myPort.write(1);
+      }
+    }
+```
+
+However, although it worked most of the times, it seemed to not work occasionally and eventually freeze the communication between Arduino and Processing programs. However, as the professor explained, I was breaking the handshaking between the two programs by only writing 'myPort.write(1);'. As he suggested, after storing the value to send in a new variable and sending them later in the code block where handshaking occurs solved the problem. It felt great to understand the challenging concept I got stuck on and see the program working! Below is the code block in Processing where handshaking and serial communication happends.
+
+```java
+// Serial function
+void serialEvent (Serial myPort) {
+  // get the ASCII string:
+  String inString = myPort.readStringUntil('\n');
+  // Always check to make sure the string isn't empty
+  if (inString != null) {
+    // trim off any whitespace:
+    inString = trim(inString);
+
+    // split the string with comma and put it in the array
+    // because the Arduino would print the potentiometer and color separated by a comma, as programmed
+    String[] array = inString.split(",");
+
+    // convert potentiomter reading to a float
+    potentiometer = float(array[0]);
+
+    // Save color reading from swtiches from Arduino to Processing
+    characterColor = array[1];
+
+    // Map the potentiometer reading to the height of the screen
+    potentiometer = map(potentiometer, 0, 1023, characterW/2, height-characterW/2);
+
+    // Update the y coordinate of the character
+    characterY = potentiometer;
+
+    // Tell Arduino to be ready for another
+    myPort.write(dataToSend + "\n");
+    dataToSend = 0;
+  }
+}
+```
+
+Once this problem was solved, the rest of the parts were easy as I have already implemented similar features before. I created a function for generating walls using Object Oriented Programming (walls as objects). I initially thought of using an array to store infinitely generating walls as time passes but soon thought of another less memory-consuming way of implementing it. I created an array for 2 walls and kept resetting the wall that the square has passed through, so that the wall that as soon as a wall moves out of the screen, it comes back to the initial position with the random color and coin location. However, the speed of the walls was kept in global variable and has been shared among all walls as it needed to keep increasing as time passes. Below is the code block where resetting wall properties occur. The boolean variable 'moveWall2' was created to start moving the second wall half a screen apart from the first wall.
+
+```java
+// Moving walls
+void manageWalls()
+{
+  // If first wall is at least at the half of the width
+  if (wallArray[0].x <= width/2)
+  {
+    moveWall2 = true;
+  }
+
+  // If not yet ready to move wall2, move only wall1
+  if (moveWall2 == false)
+  {
+    wallArray[0].checkHit();
+    wallArray[0].moveAndDraw();
+  }
+  // If both wall1 and wall2 are ready to move
+  else
+  {
+    for (int i=0; i<wallArray.length; i++)
+    {    
+      wallArray[i].moveAndDraw();
+      wallArray[i].checkHit();
+
+      // If the wall touches the left edge of the screen, reset the properties (make a new one from right edge)
+      if (wallArray[i].x <= 0)
+      {
+        wallArray[i] = new Walls();
+      }
+    }
+  }
+}
+```
+
+I created the coin as a property of a wall, since every wall has a coin inside itself. Whenever a coin is collected, the speaker needed to play a tone. Since I already figured out how to send the data from Processing to Arduino, I only needed to receive the sent data in Arduino program. As the professor suggested, I used 'Serial.parseInt()' to receive the integer data from Processing program. I sent 1 whenever a coin is collected. Below is the Arduino code block for receiving the data.
+
+```java
+// Processing sends data of coinEaten as "1" (boolean but transferred as integer)
+coinEaten = Serial.parseInt();
+```
+
+Lastly, the game over function was much easier to implement commpared to other functions. I created a boolean variable 'gameOver' and checked if it is true. whenever the square hits the wall with different color, the variable becomes true. Then, all I needed to do was just display the texts and score and let the player choose to play again. Below is the code block for game over page.
+
+```java
+// Game over
+  if (gameOver)
+  {
+    // Display "game over" and score
+    background(0, 255, 150);
+    textAlign(CENTER);
+    fill(0);
+    textFont(loadFont("Dialog.plain-30.vlw"), 50);
+    text("OOPS, GAME OVER!", width/2, height/3);
+    fill(255, 150, 0);
+    textFont(loadFont("Dialog.plain-30.vlw"), 40);
+    text("SCORE: " + score, width/2, height*3/5);
+    fill(0);
+
+    // Blinking instruction to play again
+    if (millis() % 2000 <= 1000)
+    {
+      fill(255, 255, 0);
+      textFont(loadFont("Dialog.plain-30.vlw"), 30);
+      text("Play again by pressing 'r'", width/2, height*4/5);
+    }
+
+    // Go back to the starting page to play again
+    if (keyPressed == true)
+    {
+      if (key=='r')
+      {
+        gameStart = false;
+        gameOver = false;
+        instructionStart= false;
+        score = 0;
+        moveWall2 = false;
+        dataToSend = 0;
+        wallSpeed = 5;
+        for (int i=0; i<wallArray.length; i++)
+        {
+          wallArray[i] = new Walls();
+        }
+      }
+    }
+  }
+```
+
+I have written 'README.md' and finally finished everything. To reflect, I evaluate my project as a success. 
