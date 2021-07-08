@@ -40,6 +40,10 @@ Today, I completed the gradatino function in the game page. There has not been a
 
 However, as I started algorithmically thinking about each feature of the whole game, the challenge in enabling the communication between Arduino and Processing started concerning me. While I am quite confident in programming on Processing, I am worried that I may not be able to implement the serial communication between Arduino and Processing, since I have been having a relatively hard time understanding the concept of the serial communication completely. Before starting to program for the important functions in the game page, I would now study and revise the serial communication and understand them completely.
 
-2021/07/03
+2021/07/04
 
-Today, I have revised the lectures for seiral communication from the class. 
+I have revised the lectures from the class for seiral communication between Arduino and Processing. I was able to finally understand the concept and syntax of the communication. It was quite hard, but I understand that since it will be the core of the program I am making, so it must have the importance among other features. It was particularly harder to understand, because I could not see what is going on in the serial monitor while I am running a processing program. So the process of running the program in my head was challenging for me. However, now that I understand how to implement the feature, I could finally use it for my program. Once the communication is complete, the rest of the features would be easier to implement compared to the communication feature. Therefore, from now on, I am going to start implementing the serial communication between Arduino and Processing.
+
+2021/07/05
+
+Today, I have made a big progress on my program. 
