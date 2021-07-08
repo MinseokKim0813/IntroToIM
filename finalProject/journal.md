@@ -62,19 +62,52 @@ However, I have not figured out a way to send the data for the pressed buttons f
 
 2021/07/06
 
-I have figured out a way to solve the problem I faced yesterday: how to send two different data from Arduino to Processing. It was much simpler than I thought. I created a boolean flag for the red and blue buttons each, and sent the value together with the data from the reading of the potentiometer. I stored the color in a String variable "color" and sent it to Processing as below.
+I have figured out a way to solve the problem I faced yesterday: how to send two different data from Arduino to Processing. It was much simpler than I thought. I created a boolean flag for the red and blue buttons each, and sent the value together with the data from the reading of the potentiometer. I stored the color in a String variable "color" and sent it to Processing as below. Whenever a button is pressed, its color is stored in the variable 'color'.
 
 ```java
 // Sending the data for potentiometer input and colored button input to Processing
 Serial.println(String(analogRead(potentiometer)) + "," + color);
 ```
 
-After checking that it successfully sends the data to Processing, I faced another problem. As I tried changing the color of the square in Processing according to the color data received by Arduino, Processing always seemed to recognize the color. 
+After checking that it successfully sends the data to Processing, I faced another problem. As I tried changing the color of the square in Processing according to the color data received by Arduino, Processing always seemed to recognize the color. Below was the code block I used for red color.
 
-`if (characterColor == "red")
-
+```java
+if (characterColor == "red")
   {
-  
     fill(255, 0, 0);
-    
-  }`
+  }
+```
+
+After a few 'println' statements and research on the internet, I finally figured out that when comparing two string variables, I have to use '.equals()' function instead of '=='. Apparently, '.equals()' function only checks the string value of the variable while '==' checks if two variables are exactly same, including the reference number in the memory. It was interesting to know that Java also had two different functions for comparing string variables like Python. Below is the code block that I fixed.
+
+```java
+if (characterColor.equals("red"))
+  {
+    fill(255, 0, 0);
+  }
+```
+
+Plus, I have also completed implementing the RGB light on Arduino program. Whenever a button is pressed, RGB light gets turned on with the color same as that of the pressed button. I have used 'millis()' function instead of 'delay()' function to avoid ceasing the program while waiting for the light to turn off. The light gets turned off after 1 second. Below is the code block for the RGB light function for red button.
+
+```java
+  // If red button is pressed, the color is "red"
+  if (redButtonPressed == HIGH)
+  {
+    color = "red";
+    // Indicate the color with LED
+    temp = millis();
+    digitalWrite(redLED,HIGH);
+  }
+  
+  // Turn off LED light after 1 second
+  if (millis() - temp >= 1000)
+  {
+    digitalWrite(blueLED,LOW);
+    digitalWrite(redLED,LOW);
+  }
+```
+
+As I have made a lot of progress today, I am on track. The remaining tasks are implementing walls, coins, speaker, score and game over page. The most challenging task would be how to make enable Arduino to receive the data from Processing, making the communication both ways. I have only worked with sending data from Arduino to Processing, so I have not figured out how to accomplish this task yet. From now, I am going to revise the lectures again to figure it out.
+
+2021/07/07
+
